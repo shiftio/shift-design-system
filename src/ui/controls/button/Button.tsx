@@ -53,8 +53,6 @@ export const Button = (props: ButtonProps) => {
   const buttonType = warning ? Theme.colors.status.warning : Theme.colors.status.ok;
   const buttonSize = getButtonSize()
 
-  console.log("buttonSize", buttonSize);
-
   const ButtonElement = styled(Element)`
     box-shadow: none;
     box-sizing: border-box;
@@ -79,8 +77,4 @@ export const Button = (props: ButtonProps) => {
   `;
 
   return <ButtonElement/>;
-};
-
-Button.defaultProps = {
-  ok: true,
 };

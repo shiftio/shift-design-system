@@ -2,9 +2,7 @@ import * as React from "react";
 import styled from "@emotion/styled";
 // import { Theme } from "../theme/theme";
 
-interface GridItemProps {
-  id?: string;
-  className?: string;
+type GridItemProps = React.HTMLProps<HTMLDivElement> & {
   area: string;
   justifySelf?: 'start' | 'center' | 'end' | 'stretch',
   alignSelf?: 'start' | 'center' | 'end' | 'stretch',
@@ -13,8 +11,6 @@ interface GridItemProps {
 
 export const GridItem = (props : GridItemProps & any) => {
   const {
-    id: id,
-    className: className,
     area: area,
     justifySelf: justifySelf,
     alignSelf: alignSelf,
@@ -24,8 +20,8 @@ export const GridItem = (props : GridItemProps & any) => {
 
   const Element = ({ className } : any) => (
     <div
-      {...rest}
       className={className}
+      {...rest}
     >
       {rest.children}
     </div>
@@ -37,7 +33,7 @@ export const GridItem = (props : GridItemProps & any) => {
     align-self: ${alignSelf};
   `
 
-  return <GridItemElement className={className} />;
+  return <GridItemElement/>;
 }
 
 GridItem.defaultProps = {

@@ -1,1 +1,1 @@
-export { Share } from "./Share"
+export { Icon } from "./Icon"

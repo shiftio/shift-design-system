@@ -32,6 +32,8 @@ export const Avatar = (props: AvatarProps) => {
     if(md) return Theme.media.avatar.size.md;
     if(lg) return Theme.media.avatar.size.lg;
     if(xl) return Theme.media.avatar.size.xl;
+
+    return Theme.media.avatar.size.md;
   }
 
   const Element = ({ className } : any) => (
@@ -76,7 +78,3 @@ export const Avatar = (props: AvatarProps) => {
     </div>
   );
 };
-
-Avatar.defaultProps = {
-  sm: true
-}

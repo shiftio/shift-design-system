@@ -116,6 +116,30 @@ export const Theme: ThemeType = {
           xl: "5fr"
         }
       }
+    },
+    modal: {
+      size: {
+        xs: {
+          height: "20%",
+          width: "20%"
+        },
+        sm: {
+          height: "40%",
+          width: "40%"
+        },
+        md: {
+          height: "60%",
+          width: "60%"
+        },
+        lg: {
+          height: "75%",
+          width: "75%"
+        },
+        xl: {
+          height: "90%",
+          width: "90%"
+        }
+      }
     }
   }
 };
