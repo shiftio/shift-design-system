@@ -1,18 +1,18 @@
 import * as React from "react";
 import { render } from "react-dom";
 // import styled from "@emotion/styled";
-import { TextInput, Avatar, Button, ButtonProps, Share, Grid, GridItem, Modal} from "./ui";
+import { TextInput, Avatar, Button, Share, Grid, GridItem, Modal} from "./ui";
 // import styled from "styled-components";
 
 function App() {
   return (
     <div className="App">
-      <Modal>Foo</Modal>
+      {/* <Modal>Foo</Modal> */}
       {/* <Grid columns={['sm', 'md', 'lg']} rows={['sm', 'md']} areas={[{name: "foo", start: [0, 0], end: [2, 1]}]}>
         <GridItem area="foo" style={{backgroundColor: "yellow"}}>Foo</GridItem></Grid>
       <Avatar initials="MD" size="xs"></Avatar>
       <hr></hr> */}
-      <Button xs outline={true}>Foo</Button>
+      <Button lg >Save</Button>
       {/* <Button sm>Foo</Button>
       <Button md>Foo</Button>
       <Button lg>Foo</Button>

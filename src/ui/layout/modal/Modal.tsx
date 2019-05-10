@@ -13,7 +13,7 @@ export const Modal = (props : ModalProps) => {
   } = props;
 
   const Element = ({ className } : any) => (
-      <div className={className}>
+      <div className={className} {...rest}>
         <div>
           {rest.children}
         </div>
@@ -47,7 +47,7 @@ export const Modal = (props : ModalProps) => {
     }
   `
 
-  return <ModalElement className={className} />;
+  return <ModalElement />;
 }
 
 Modal.defaultProps = {

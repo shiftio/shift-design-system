@@ -14,7 +14,7 @@ export type ButtonProps = React.HTMLProps<HTMLButtonElement> & {
   ref?: React.Ref<HTMLElement>;
 }
 
-const Button = (props: ButtonProps) => {
+export const Button = (props: ButtonProps) => {
 
   const {
     xs: xs,
@@ -46,10 +46,14 @@ const Button = (props: ButtonProps) => {
     if(md) return Theme.controls.button.md;
     if(lg) return Theme.controls.button.lg;
     if(xl) return Theme.controls.button.xl;
+
+    return Theme.controls.button.md;
   }
 
   const buttonType = warning ? Theme.colors.status.warning : Theme.colors.status.ok;
   const buttonSize = getButtonSize()
+
+  console.log("buttonSize", buttonSize);
 
   const ButtonElement = styled(Element)`
     box-shadow: none;
@@ -79,5 +83,4 @@ const Button = (props: ButtonProps) => {
 
 Button.defaultProps = {
   ok: true,
-  xs: true
 };

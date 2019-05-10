@@ -51,6 +51,8 @@ export const Avatar = (props: AvatarProps) => {
     </div>
   );
 
+  const size = getSize();
+
   const AvatarElement = styled(Element)`
     display: flex;
     justify-content: center;
@@ -61,9 +63,9 @@ export const Avatar = (props: AvatarProps) => {
     box-sizing: border-box;
     color: ${Theme.colors.text.dark};
     background-color: ${Theme.media.avatar.backgroundColor};
-    height: ${Theme.media.avatar.size[size]};
-    width: ${Theme.media.avatar.size[size]};
-    font-size: ${Theme.media.avatar.size[size] * 0.4};
+    height: ${size};
+    width: ${size};
+    font-size: ${size * 0.4};
     border: ${Theme.media.avatar.borderWidth} solid
       ${Theme.media.avatar.borderColor};
   `;
