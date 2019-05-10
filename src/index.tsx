@@ -8,10 +8,10 @@ function App() {
   return (
     <div className="App">
       <Modal>Foo</Modal>
-      <Grid columns={['sm', 'md', 'lg']} rows={['sm', 'md']} areas={[{name: "foo", start: [0, 0], end: [2, 1]}]}>
+      {/* <Grid columns={['sm', 'md', 'lg']} rows={['sm', 'md']} areas={[{name: "foo", start: [0, 0], end: [2, 1]}]}>
         <GridItem area="foo" style={{backgroundColor: "yellow"}}>Foo</GridItem></Grid>
       <Avatar initials="MD" size="xs"></Avatar>
-      <hr></hr>
+      <hr></hr> */}
       <Button xs outline={true}>Foo</Button>
       {/* <Button sm>Foo</Button>
       <Button md>Foo</Button>
@@ -36,7 +36,6 @@ function App() {
       <Button md type="warning">Foo</Button>
       <Button lg type="warning">Foo</Button>
       <Button xl type="warning">Foo</Button> */}
-      <Button></Button>
 
       <hr></hr>
       <TextInput></TextInput>
