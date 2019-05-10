@@ -1,3 +1,3 @@
 export { TextInput } from "./text-input";
 export { Avatar } from "./avatar";
-export { Button } from "./button";
+export { Button, ButtonProps } from "./button";

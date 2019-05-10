@@ -2,36 +2,46 @@ import * as React from "react";
 import styled from "@emotion/styled";
 import { Theme } from "../../theme/theme";
 
-interface AvatarProps {
-  id?: string;
-  className?: string;
-  size?: "xs" | "sm" | "md" | "lg" | "xl";
+type AvatarProps  = React.HTMLProps<HTMLDivElement> & {
+  xs?: boolean;
+  sm?: boolean;
+  md?: boolean;
+  lg?: boolean;
+  xl?: boolean;
   source: string;
   initials?: string;
-  onClick?: React.MouseEventHandler;
   ref?: React.Ref<HTMLElement>;
 }
 
-export const Avatar = (props: AvatarProps & any) => {
+export const Avatar = (props: AvatarProps) => {
   const {
-    id: id,
-    className: className,
-    size: size,
+    xs: xs,
+    sm: sm,
+    md: md,
+    lg: lg,
+    xl: xl,
     source: source,
     initials: initials,
-    onClick: onClick,
     ref: ref,
     ...rest
   } = props;
 
-  const Element = ({ className }) => (
-    <div id={id} className={className} onClick={onClick} ref={ref} {...rest}>
+  const getSize = () => {
+    if(xs) return Theme.media.avatar.size.xs;
+    if(sm) return Theme.media.avatar.size.sm;
+    if(md) return Theme.media.avatar.size.md;
+    if(lg) return Theme.media.avatar.size.lg;
+    if(xl) return Theme.media.avatar.size.xl;
+  }
+
+  const Element = ({ className } : any) => (
+    <div className={className} ref={ref} {...rest}>
       {source ? (
         <img
           alt=""
           style={{
-            height: Theme.media.avatar.size[size],
-            width: Theme.media.avatar.size[size]
+            height: getSize(),
+            width: getSize()
           }}
           src={source}
         />
@@ -60,7 +70,11 @@ export const Avatar = (props: AvatarProps & any) => {
 
   return (
     <div>
-      <AvatarElement className={className} />
+      <AvatarElement/>
     </div>
   );
 };
+
+Avatar.defaultProps = {
+  sm: true
+}

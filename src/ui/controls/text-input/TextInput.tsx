@@ -2,39 +2,19 @@ import * as React from "react";
 import styled from "@emotion/styled";
 import { Theme } from "../../theme/theme";
 
-interface TextInputProps {
-  id?: string;
-  className?: string;
-  placeholder: string;
-  onChange?: React.ChangeEventHandler;
-  onKeyDown?: React.KeyboardEventHandler;
-  onFocus?: React.FocusEventHandler;
-  onBlur?: React.FocusEventHandler;
+type TextInputProps = React.HTMLProps<HTMLInputElement> & {
   ref?: React.Ref<HTMLElement>;
 }
 
-export const TextInput = (props: TextInputProps & any) => {
+export const TextInput = (props: TextInputProps) => {
   const {
-    id: id,
-    className: className,
-    placeholder: placeholder,
-    onChange: onChange,
-    onKeyDown: onKeyDown,
-    onFocus: onFocus,
-    onBlur: onBlur,
     ref: ref,
     ...rest
   } = props;
 
-  const InputElement = ({ className }) => (
+  const InputElement = ({ className } : any) => (
     <input
-      id={id}
       className={className}
-      placeholder={placeholder}
-      onChange={onChange}
-      onKeyDown={onKeyDown}
-      onFocus={onFocus}
-      onBlur={onBlur}
       ref={ref}
       {...rest}
     />
@@ -62,5 +42,5 @@ export const TextInput = (props: TextInputProps & any) => {
     }
   `;
 
-  return <Input className={className} />;
+  return <Input/>;
 };

@@ -10,7 +10,9 @@ const statusWarning = "#FFAA15";
 const statusOK = brand;
 const statusDisabled = "#CCCCCC";
 
-export const Theme = {
+type ThemeType = any
+
+export const Theme: ThemeType = {
   colors: {
     brand: brand,
     black: black,
@@ -47,7 +49,7 @@ export const Theme = {
       padding: "12px 14px"
     },
     button: {
-      borderRadius: "4px",
+      borderRadius: "3px",
       xs: {
         fontSize: "7px",
         fontWeight: "100px",
@@ -91,6 +93,28 @@ export const Theme = {
         md: "100px",
         lg: "125px",
         xl: "150px"
+      }
+    }
+  },
+  layouts: {
+    grid: {
+      column: {
+        size: {
+          xs: "0.2fr",
+          sm: "0.5fr",
+          md: "1fr",
+          lg: "2fr",
+          xl: "3fr"
+        }
+      },
+      row: {
+        size: {
+          xs: "1fr",
+          sm: "2fr",
+          md: "3fr",
+          lg: "4fr",
+          xl: "5fr"
+        }
       }
     }
   }

@@ -2,80 +2,82 @@ import * as React from "react";
 import styled from "@emotion/styled";
 import { Theme } from "../../theme/theme";
 
-interface ButtonProps {
-  id?: string;
-  className?: string;
-  type?: "ok" | "warning";
-  size?: "xs" | "sm" | "md" | "lg" | "xl";
-  disabled?: boolean;
-  onClick?: React.MouseEventHandler;
-  onMouseEnter?: React.MouseEventHandler;
-  onMouseLeave?: React.MouseEventHandler;
+export type ButtonProps = React.HTMLProps<HTMLButtonElement> & {
+  xs?: boolean;
+  sm?: boolean;
+  md?: boolean;
+  lg?: boolean;
+  xl?: boolean;
+  ok?: boolean;
+  warning?: boolean;
+  outline?: boolean;
   ref?: React.Ref<HTMLElement>;
 }
 
-export const Button = (props: ButtonProps & any) => {
+const Button = (props: ButtonProps) => {
+
   const {
-    id: id,
-    className: className,
+    xs: xs,
+    sm: sm,
+    md: md,
+    lg: lg,
+    xl: xl,
+    ok: ok,
+    warning: warning,
     type: type,
     size: size,
-    disabled: disabled,
-    onClick: onClick,
-    onMouseEnter: onMouseEnter,
-    onMouseLeave: onMouseLeave,
+    outline: outline,
     ref: ref,
     ...rest
   } = props;
 
-  console.log("FOOOO", size, Theme.controls.button);
-
-  const Element = ({ className }) => (
+  const Element = ({ className } : any) => (
     <button
-      {...props}
-      // type={type}
       className={className}
-      onClick={onClick}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
+      {...rest}
     >
       {rest.children}
     </button>
   );
 
-  const ButtonElement = styled(Element)`
-    color: ${Theme.colors.text.dark};
-    background-color: ${Theme.colors.status[type]};
-    /* height: ${Theme.controls.button[size].height}; */
-    width: ${Theme.controls.button[size].width};
-    font-size: ${Theme.controls.button[size].fontSize};
-    font-weight: ${Theme.controls.button[size].fontWeight};
-    pointer-events: ${disabled ? "none" : "auto"};
-    opacity: .25; /*${disabled ? 0.25 : 1};
-    border-radius: 3px;
-    display: inline-block;
-    padding: ${Theme.controls.button[size].verticalPadding} ${
-    Theme.controls.button[size].horizontalPadding
-  };
-    margin: 10px;
-    box-shadow: none;
-    border: none;
-    opacity: 1;
-    cursor: pointer;
-    transition: all cubic-bezier(0.4, 0, 0.2, 1) 300ms;
+  const getButtonSize = () => {
+    if(xs) return Theme.controls.button.xs;
+    if(sm) return Theme.controls.button.sm;
+    if(md) return Theme.controls.button.md;
+    if(lg) return Theme.controls.button.lg;
+    if(xl) return Theme.controls.button.xl;
+  }
 
+  const buttonType = warning ? Theme.colors.status.warning : Theme.colors.status.ok;
+  const buttonSize = getButtonSize()
+
+  const ButtonElement = styled(Element)`
+    box-shadow: none;
+    box-sizing: border-box;
+    cursor: pointer;
     &:focus {
       outline: none;
     }
+    transition: all cubic-bezier(0.4, 0, 0.2, 1) 300ms;
+    color: ${outline ? buttonType :  Theme.colors.text.dark};
+    background-color: ${outline ? "none" : buttonType};
+    width: ${buttonSize.width};
+    font-size: ${buttonSize.fontSize};
+    font-weight: ${buttonSize.fontWeight};
+    pointer-events: auto;
+    border-radius: ${Theme.controls.button.borderRadius};
+    border: 2px solid ${outline ? buttonType : "none"};
+    padding: ${buttonSize.verticalPadding} ${buttonSize.horizontalPadding};
+    :disabled {
+      pointer-events: none;
+      opacity: 0.25
+    }
   `;
 
-  return <ButtonElement className={className} />;
+  return <ButtonElement/>;
 };
 
 Button.defaultProps = {
-  type: "ok",
-  size: "xs"
+  ok: true,
+  xs: true
 };
-
-/* boxShadow: ghost ? `inset 0 0 0 1px ${shadowColor}` : "none", */
-/* minWidth: minWidth ? `${minWidth}px` : "none" */
