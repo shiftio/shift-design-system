@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { render } from "react-dom";
 // import styled from "@emotion/styled";
-import { TextInput, Avatar, Button, Grid, GridItem, Icon, Modal} from "./ui";
+import { Global, css } from "@emotion/core"
+import { TextInput, Avatar, Button, Grid, GridItem, Icon, Modal, Header, Paragraph, ShiftStyle} from "./ui";
 // import styled from "styled-components";
 
 function App() {
@@ -13,7 +14,22 @@ function App() {
 
   return (
     <div className="App" >
-      <Icon name="add"></Icon>
+      <ShiftStyle></ShiftStyle>
+      <Header as="h1" align="end" color="black">Foo</Header>
+      <Paragraph align="end">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat eleifend nisi, ut dignissim purus feugiat vel. Nulla id neque ipsum. Mauris vitae est mi. Nunc congue ipsum velit, sed mollis nunc tempor pharetra. Vestibulum accumsan euismod consectetur. Quisque ullamcorper, est at placerat aliquam, odio nisl molestie dui, ac sollicitudin justo lectus in quam. Nulla rutrum pellentesque tincidunt. Sed purus erat, volutpat id rhoncus a, scelerisque vitae nisl. In hac habitasse platea dictumst. In aliquet orci in est sagittis, quis tempor arcu ornare. Pellentesque feugiat tellus quis enim volutpat egestas.</Paragraph>>
+      <Header as="h2" color="white">Foo</Header>
+      <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat eleifend nisi, ut dignissim purus feugiat vel. Nulla id neque ipsum. Mauris vitae est mi. Nunc congue ipsum velit, sed mollis nunc tempor pharetra. Vestibulum accumsan euismod consectetur. Quisque ullamcorper, est at placerat aliquam, odio nisl molestie dui, ac sollicitudin justo lectus in quam. Nulla rutrum pellentesque tincidunt. Sed purus erat, volutpat id rhoncus a, scelerisque vitae nisl. In hac habitasse platea dictumst. In aliquet orci in est sagittis, quis tempor arcu ornare. Pellentesque feugiat tellus quis enim volutpat egestas.</Paragraph>>
+      <Header as="h3" color="neutral-primary">Foo</Header>
+      <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat eleifend nisi, ut dignissim purus feugiat vel. Nulla id neque ipsum. Mauris vitae est mi. Nunc congue ipsum velit, sed mollis nunc tempor pharetra. Vestibulum accumsan euismod consectetur. Quisque ullamcorper, est at placerat aliquam, odio nisl molestie dui, ac sollicitudin justo lectus in quam. Nulla rutrum pellentesque tincidunt. Sed purus erat, volutpat id rhoncus a, scelerisque vitae nisl. In hac habitasse platea dictumst. In aliquet orci in est sagittis, quis tempor arcu ornare. Pellentesque feugiat tellus quis enim volutpat egestas.</Paragraph>>
+      <Header as="h4" color="brand">Foo</Header>
+      <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat eleifend nisi, ut dignissim purus feugiat vel. Nulla id neque ipsum. Mauris vitae est mi. Nunc congue ipsum velit, sed mollis nunc tempor pharetra. Vestibulum accumsan euismod consectetur. Quisque ullamcorper, est at placerat aliquam, odio nisl molestie dui, ac sollicitudin justo lectus in quam. Nulla rutrum pellentesque tincidunt. Sed purus erat, volutpat id rhoncus a, scelerisque vitae nisl. In hac habitasse platea dictumst. In aliquet orci in est sagittis, quis tempor arcu ornare. Pellentesque feugiat tellus quis enim volutpat egestas.</Paragraph>>
+      <Header as="h5" color="neutral-secondary">Foo</Header>
+      <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat eleifend nisi, ut dignissim purus feugiat vel. Nulla id neque ipsum. Mauris vitae est mi. Nunc congue ipsum velit, sed mollis nunc tempor pharetra. Vestibulum accumsan euismod consectetur. Quisque ullamcorper, est at placerat aliquam, odio nisl molestie dui, ac sollicitudin justo lectus in quam. Nulla rutrum pellentesque tincidunt. Sed purus erat, volutpat id rhoncus a, scelerisque vitae nisl. In hac habitasse platea dictumst. In aliquet orci in est sagittis, quis tempor arcu ornare. Pellentesque feugiat tellus quis enim volutpat egestas.</Paragraph>>
+      <Header as="h6">Foo</Header>
+      <Paragraph><strong>Snoodle</strong> Lorem ipsum <b>xd dfvsdfvsdfvsdfv</b>dolor sit amet, consectetur adipiscing elit. Vestibulum consequat eleifend nisi, ut dignissim purus feugiat vel. Nulla id neque ipsum. Mauris vitae est mi. Nunc congue ipsum velit, sed mollis nunc tempor pharetra. Vestibulum accumsan euismod consectetur. Quisque ullamcorper, est at placerat aliquam, odio nisl molestie dui, ac sollicitudin justo lectus in quam. Nulla rutrum pellentesque tincidunt. Sed purus erat, volutpat id rhoncus a, scelerisque vitae nisl. In hac habitasse platea dictumst. In aliquet orci in est sagittis, quis tempor arcu ornare. Pellentesque feugiat tellus quis enim volutpat egestas.</Paragraph>>
+      <div style={{backgroundColor: "grey"}}>Foo Bar</div>
+
+      {/* <Icon name="add"></Icon>
       <Icon name="arrow-drop-down"></Icon>
       <Icon name="arrow-forward"></Icon>
       <Icon name="aspect-ratio"></Icon>
@@ -57,7 +73,7 @@ function App() {
       <Icon name="subscriptions"></Icon>
       <Icon name="tag"></Icon>
       <Icon name="thumbs-up"></Icon>
-      <Icon name="view"></Icon>
+      <Icon name="view"></Icon> */}
 
       {/* <Button onClick={()=>{setOpen(true)}}>Open Modal</Button>
       {open ? <Modal xs onClose={closeModal} closeOnBlur={true}>Foo</Modal> : ""} */}

@@ -141,5 +141,40 @@ export const Theme: ThemeType = {
         }
       }
     }
+  },
+  typography: {
+    h1: {
+      fontSize: "2rem",
+      marginTop: "1rem",
+      marginBottom: "1rem"
+    },
+    h2: {
+      fontSize: "1.8rem",
+      marginTop: ".9rem",
+      marginBottom: ".9rem"
+    },
+    h3: {
+      fontSize: "1.6rem",
+      marginTop: ".8rem",
+      marginBottom: ".8rem"
+    },
+    h4: {
+      fontSize: "1.4rem",
+      marginTop: ".7rem",
+      marginBottom: ".7rem"
+    },
+    h5: {
+      fontSize: "1.2rem",
+      marginTop: ".6rem",
+      marginBottom: ".6rem"
+    },
+    h6: {
+      fontSize: "1rem",
+      marginTop: ".5rem",
+      marginBottom: ".5rem"
+    },
+    p: {
+      fontSize: "1rem"
+    }
   }
 };
