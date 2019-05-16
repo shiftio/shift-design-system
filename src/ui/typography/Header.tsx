@@ -64,7 +64,7 @@ export const Header = (props: HeaderProps) => {
 };
 
 Header.defaultProps = {
-    as: 'h3',
+    as: 'h4',
     align: "center",
     color: "neutral-primary"
 }

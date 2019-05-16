@@ -80,6 +80,28 @@ export const Theme: ThemeType = {
         verticalPadding: "10px",
         horizontalPadding: "28px"
       }
+    },
+    tab: {
+      xs: {
+        width: "5rem",
+        fontSize: "1rem"
+      },
+      sm: {
+        width: "8rem",
+        fontSize: "1.2rem"
+      },
+      md: {
+        width: "12rem",
+        fontSize: "1.4rem"
+      },
+      lg: {
+        width: "16rem",
+        fontSize: "1.6rem"
+      },
+      xl: {
+        width: "20rem",
+        fontSize: "1.8rem"
+      }
     }
   },
   media: {
@@ -144,17 +166,17 @@ export const Theme: ThemeType = {
   },
   typography: {
     h1: {
-      fontSize: "2rem",
+      fontSize: "4rem",
       marginTop: "1rem",
       marginBottom: "1rem"
     },
     h2: {
-      fontSize: "1.8rem",
+      fontSize: "3rem",
       marginTop: ".9rem",
       marginBottom: ".9rem"
     },
     h3: {
-      fontSize: "1.6rem",
+      fontSize: "2rem",
       marginTop: ".8rem",
       marginBottom: ".8rem"
     },
@@ -175,6 +197,15 @@ export const Theme: ThemeType = {
     },
     p: {
       fontSize: "1rem"
+    }
+  },
+  icons: {
+    size: {
+      xs: "1rem",
+      sm: "1.75rem",
+      md: "2.5rem",
+      lg: "3.25rem",
+      xl: "4rem"
     }
   }
 };
