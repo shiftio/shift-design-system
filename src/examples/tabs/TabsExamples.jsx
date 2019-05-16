@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Header, Icon, Tabs, Tab } from "../../ui"
+import { Header, Icon, ShiftStyle, Tabs, Tab } from "../../ui"
+import { render } from "react-dom";
 
-export const TabsExamples = () => {
+function TabsExamples() {
 
   const [versionsTabSelected, setVersionsTabSelected] = useState(true)
   const [activityTabSelected, setActivityTabSelected] = useState(false)
@@ -26,7 +27,8 @@ export const TabsExamples = () => {
   }
 
   return (
-    <div>
+    <div className="App">
+      <ShiftStyle></ShiftStyle>
       <div style={{paddingTop: "50px", paddingBottom: "50px"}}>
         <Header>Small Tabs</Header>
         <Tabs align="center">
@@ -90,3 +92,5 @@ export const TabsExamples = () => {
   );
 };
 
+const rootElement = document.getElementById("root");
+render(<TabsExamples />, rootElement);

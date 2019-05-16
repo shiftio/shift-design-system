@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
 import { render } from "react-dom";
 import { Header, ShiftStyle, Box} from "./ui";
-import { TabsExamples } from "./examples/tabs/TabsExamples"
+
 
 function App() {
   return (
@@ -19,9 +19,9 @@ function App() {
             <Box><Link to={`/tabs-examples`}><Header>Text Input</Header></Link></Box>
             <Box><Link to={`/tabs-examples`}><Header>Tabs</Header></Link></Box>
           </Box>
-          <main>
+          {/* <main>
             <Route exact path="/tabs-examples" component={TabsExamples} />
-          </main>
+          </main> */}
         </div>
       </Router>
     </div>
